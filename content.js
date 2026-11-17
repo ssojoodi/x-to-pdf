@@ -40,7 +40,19 @@
   const escapeHtml = (value) => value.replace(/[&<>]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[char]);
   const escapeAttr = (value) => value.replace(/[&"<>]/g, (char) => ({ "&": "&amp;", '"': "&quot;", "<": "&lt;", ">": "&gt;" })[char]);
 
-  const extract = () => {
+  const imageItem = (image) => {
+    // Only article media, never avatars, emoji, or arbitrary remote URLs.
+    try {
+      const url = new URL(image.currentSrc || image.src);
+      if (url.protocol !== "https:" || url.hostname !== "pbs.twimg.com"
+        || !url.pathname.startsWith("/media/") || url.username || url.password) return null;
+      return { kind: "image", src: url.href, alt: cleanText(image.alt || "") };
+    } catch {
+      return null;
+    }
+  };
+
+  const extract = (includeImages = false) => {
     const root = articleRoot();
     if (!root) throw new Error("This page does not appear to contain an X Article.");
 
@@ -52,7 +64,19 @@
 
     const seen = new Set();
     const content = [];
-    for (const block of blocks) {
+    const nodes = includeImages
+      ? [...root.querySelectorAll('[data-block="true"], img')]
+      : blocks;
+    const seenImages = new Set();
+    for (const block of nodes) {
+      if (block.tagName === "IMG") {
+        const item = imageItem(block);
+        if (item && !seenImages.has(item.src)) {
+          seenImages.add(item.src);
+          content.push(item);
+        }
+        continue;
+      }
       if (block.closest('[data-testid="markdown-code-block"]')) continue;
       const tag = block.tagName.toLowerCase();
       const html = inlineHtml(block);
@@ -80,7 +104,7 @@
 
   chrome.runtime.onMessage.addListener((message, _sender, respond) => {
     if (message?.type !== "X2PDF_EXTRACT") return;
-    try { respond({ ok: true, article: extract() }); }
+    try { respond({ ok: true, article: extract(message.includeImages === true) }); }
     catch (error) { respond({ ok: false, error: error.message }); }
   });
 })();

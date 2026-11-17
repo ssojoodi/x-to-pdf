@@ -8,17 +8,19 @@ Get a compact two-column layout with the article's headings, emphasis, links, qu
 
 ## Install
 
-1. Download the release package, `x-to-pdf-v1.0.1.zip`. In this checkout it is in `dist/`.
+1. Download the release package, `x-to-pdf-v1.0.1.zip`. It is included at [web-page/downloads/x-to-pdf-v1.0.1.zip](web-page/downloads/x-to-pdf-v1.0.1.zip).
 2. Extract it into a permanent folder.
 3. Open `chrome://extensions` and enable **Developer mode**.
 4. Click **Load unpacked** and select the extracted `x-to-pdf` folder containing `manifest.json`.
 
 Keep the extracted folder after installation. Choose the release ZIP rather than GitHub's **Source code** downloads.
 
+The packaged release is **1.0.1**. The repository contains **1.0.2 development source**, including the unreleased image toggle. To try it, follow the development instructions below.
+
 ## Save an article as a PDF
 
 1. Open an X long-form Article and wait for it to finish loading.
-2. Click the extension, then **Create PDF**.
+2. Click the extension. Optionally enable **Include images**, then click **Create PDF**. The toggle starts off each time the popup opens.
 3. Review the preview and click **Print / Save PDF**.
 4. Choose **Save to PDF** in Chrome's print dialog.
 
@@ -32,7 +34,7 @@ Download and extract the new release, replace the files in your installed extens
 
 ## Privacy
 
-The extension reads the active X/Twitter page when you click **Create PDF**. It does not upload article text or make network requests. Article data is held briefly in local extension storage and deleted when the preview loads.
+The extension reads the active X/Twitter page when you click **Create PDF**. It does not upload article text. With **Include images** off, the preview makes no image requests. When enabled, the preview loads article media from X’s image server (`pbs.twimg.com`) without a referrer; avatars and emoji are excluded. Article data is held briefly in local extension storage and deleted when the preview loads.
 
 ## How it works
 
@@ -65,10 +67,10 @@ The script reads the version from `manifest.json` and creates `dist/x-to-pdf-v<v
 
 Preserve any ZIP already submitted to the Chrome Web Store. Repackaging after source or documentation changes can change its contents even when the version is unchanged; use a new version for the next release.
 
-For a release, update the manifest version, README changelog, and `RELEASE_NOTES.md`; commit and push the source, then package it. Publish the matching tag and attach the ZIP with GitHub CLI (example for version 1.0.1):
+For a release, update the manifest version, README changelog, and `RELEASE_NOTES.md`; commit and push the source, then package it. Publish the matching tag and attach the ZIP with GitHub CLI after validation. Use release notes for that version only (example for the next release):
 
 ```bash
-gh release create v1.0.1 dist/x-to-pdf-v1.0.1.zip --title "X to PDF v1.0.1" --notes-file RELEASE_NOTES.md
+gh release create v1.0.2 dist/x-to-pdf-v1.0.2.zip --title "X to PDF v1.0.2" --notes-file /path/to/version-release-notes.md
 ```
 
 Use the uploaded ZIP as the installation download; GitHub's automatically generated source archives contain the development repository.
@@ -79,11 +81,13 @@ X's four known long-form container selectors are intentionally isolated at the t
 
 ## Changelog
 
+- **1.0.2 (unreleased)** - Optional article images, off by default, with column-sized previews and graceful handling of unavailable images.
+
 - **1.0.1** - Inject the article reader on demand when an X tab predates extension installation; no manual reload required.
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+Project code and original assets are licensed under the [MIT License](LICENSE). Third-party article text and images shown in the sample PDF, its thumbnail, and demo videos remain the property of their respective owners and are not covered by this license.
 
 ## Website deployment
 

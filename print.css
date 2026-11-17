@@ -30,3 +30,8 @@ footer { margin-top: .17in; padding-top: .08in; border-top: .5pt solid #aaa; col
   #document { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
 }
 
+
+#content figure { margin: 6pt 0; break-inside: avoid; }
+#content figure img { display: block; width: 100%; height: auto; max-height: 8in; object-fit: contain; }
+#content figcaption { font: italic 8pt/1.2 "Times New Roman", Times, serif; color: #666; }
+.toolbar button:disabled { opacity: .5; cursor: wait; }

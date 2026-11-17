@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "X to PDF",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Turn an open X Article into a clean, two-column, 9 pt print-ready document.",
   "permissions": [
     "activeTab",

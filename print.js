@@ -2,6 +2,47 @@ const key = location.hash.slice(1);
 const documentNode = document.querySelector("#document");
 const contentNode = document.querySelector("#content");
 const errorNode = document.querySelector("#error");
+const printButton = document.querySelector("#print");
+const imageLoads = [];
+printButton.disabled = true;
+
+const appendImage = (item) => {
+  // Validate again at the rendering boundary, without injecting image HTML.
+  try {
+    const url = new URL(item.src);
+    if (url.protocol !== "https:" || url.hostname !== "pbs.twimg.com"
+      || !url.pathname.startsWith("/media/") || url.username || url.password) return;
+    const figure = document.createElement("figure");
+    const image = document.createElement("img");
+    image.alt = item.alt || "Article image";
+    image.referrerPolicy = "no-referrer";
+    imageLoads.push(new Promise((resolve) => {
+      let settled = false;
+      const finish = (failed) => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timeout);
+        image.onload = null;
+        image.onerror = null;
+        if (failed) {
+          image.removeAttribute("src");
+          const caption = document.createElement("figcaption");
+          caption.textContent = item.alt ? `Image unavailable: ${item.alt}` : "Image unavailable";
+          figure.replaceChildren(caption);
+        }
+        resolve(failed);
+      };
+      const timeout = setTimeout(() => finish(true), 15000);
+      image.onload = () => finish(false);
+      image.onerror = () => finish(true);
+      image.src = url.href;
+    }));
+    figure.appendChild(image);
+    contentNode.appendChild(figure);
+  } catch {
+    // Ignore unsupported image sources.
+  }
+};
 
 const showError = (message) => {
   errorNode.textContent = message;
@@ -20,6 +61,10 @@ const appendContent = (items) => {
       continue;
     }
     flushList();
+    if (item.kind === "image") {
+      appendImage(item);
+      continue;
+    }
     const tag = item.kind === "heading" ? `h${Math.min(6, Math.max(2, item.level || 2))}`
       : item.kind === "quote" ? "blockquote"
       : item.kind === "code" ? "pre"
@@ -46,8 +91,17 @@ const load = async () => {
   source.textContent = article.source;
   appendContent(article.content);
   documentNode.hidden = false;
+  if (imageLoads.length) {
+    const hint = document.querySelector(".toolbar span");
+    hint.textContent = "Loading article images…";
+    const results = await Promise.all(imageLoads);
+    hint.textContent = results.some(Boolean)
+      ? "Some images could not load. You can still print the article."
+      : "Choose “Save to PDF” in Chrome’s print dialog.";
+  }
+  printButton.disabled = false;
 };
 
-document.querySelector("#print").addEventListener("click", () => window.print());
+printButton.addEventListener("click", () => window.print());
 load().catch((error) => showError(error.message || "Could not build the print preview."));
 

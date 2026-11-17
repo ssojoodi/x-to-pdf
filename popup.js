@@ -2,6 +2,7 @@ const $ = (selector) => document.querySelector(selector);
 const urlInput = $("#url");
 const createButton = $("#create");
 const openButton = $("#open");
+const includeImagesInput = $("#include-images");
 const status = $("#status");
 
 const isXUrl = (value) => {
@@ -21,12 +22,12 @@ const setStatus = (message, error = false) => {
 
 const activeTab = async () => (await chrome.tabs.query({ active: true, currentWindow: true }))[0];
 
-const extractFrom = async (tabId) => {
+const extractFrom = async (tabId, includeImages) => {
   try {
-    return await chrome.tabs.sendMessage(tabId, { type: "X2PDF_EXTRACT" });
+    return await chrome.tabs.sendMessage(tabId, { type: "X2PDF_EXTRACT", includeImages });
   } catch {
     await chrome.scripting.executeScript({ target: { tabId }, files: ["content.js"] });
-    return chrome.tabs.sendMessage(tabId, { type: "X2PDF_EXTRACT" });
+    return chrome.tabs.sendMessage(tabId, { type: "X2PDF_EXTRACT", includeImages });
   }
 };
 
@@ -48,7 +49,7 @@ createButton.addEventListener("click", async () => {
   try {
     const tab = await activeTab();
     if (!tab?.id || !isXUrl(tab.url || "")) throw new Error("Open the X Article in this tab first.");
-    const result = await extractFrom(tab.id);
+    const result = await extractFrom(tab.id, includeImagesInput.checked);
     if (!result?.ok) throw new Error(result?.error || "No article content found.");
     const key = crypto.randomUUID();
     await chrome.storage.local.set({ [key]: result.article });

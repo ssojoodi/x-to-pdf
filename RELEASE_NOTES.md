@@ -1,3 +1,8 @@
+# X to PDF v1.0.2 (unreleased)
+
+- Add an **Include images** toggle, off each time the popup opens.
+- Load article media from X’s image server into the PDF columns; wait for images before enabling Print and show a placeholder if loading fails.
+
 # X to PDF v1.0.1
 
 Convert an open X Article into a local, print-ready document with two columns, Letter paper, and 9 pt Times New Roman body text.

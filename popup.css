@@ -14,8 +14,8 @@ h1 { margin: 0; font-size: 17px; letter-spacing: -0.02em; }
 .description { margin: 8px 0 16px; color: #64645f; }
 label { display: block; margin-bottom: 5px; font-size: 11px; font-weight: 650; text-transform: uppercase; letter-spacing: .06em; }
 .url-row { display: flex; gap: 7px; }
-input { min-width: 0; flex: 1; height: 36px; padding: 0 10px; border: 1px solid #cecec8; border-radius: 6px; background: white; outline: none; }
-input:focus { border-color: #171717; box-shadow: 0 0 0 2px #17171716; }
+input[type="url"] { min-width: 0; flex: 1; height: 36px; padding: 0 10px; border: 1px solid #cecec8; border-radius: 6px; background: white; outline: none; }
+input[type="url"]:focus { border-color: #171717; box-shadow: 0 0 0 2px #17171716; }
 button { height: 36px; border-radius: 6px; font-weight: 650; cursor: pointer; }
 .secondary { padding: 0 13px; border: 1px solid #cecec8; background: #fff; color: #171717; }
 .primary { width: 100%; margin-top: 10px; border: 0; background: #171717; color: white; }
@@ -23,3 +23,7 @@ button:disabled { opacity: .5; cursor: wait; }
 #status { min-height: 18px; margin: 10px 0 0; color: #64645f; font-size: 12px; }
 #status.error { color: #a1261c; }
 
+
+.image-option { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px; font-size: 13px; font-weight: 500; text-transform: none; letter-spacing: normal; }
+.image-option input { margin: 0; accent-color: #171717; }
+.image-help { margin: 0; font-size: 11px; color: #64645f; }

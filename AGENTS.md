@@ -23,7 +23,7 @@ No automated framework or coverage threshold exists. Manually test a fully loade
 
 ## Commit & Pull Request Guidelines
 
-Git history is unavailable in this checkout, so no established commit convention can be confirmed. Use concise imperative subjects, such as `Fix article selector fallback`. PRs should describe the change, link relevant issues, record manual checks, and include preview or PDF screenshots for layout changes. Update the manifest version and README changelog for releases.
+Use concise imperative subjects, such as `Fix article selector fallback`. PRs should describe the change, link relevant issues, record manual checks, and include preview or PDF screenshots for layout changes. Update the manifest version and README changelog for releases.
 
 ## Privacy & Configuration
 
