@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X to PDF — Save articles. Read anywhere.</title>
+  <meta name="description" content="Save X Articles as clean, two-column PDFs. A free Chrome extension with local processing and no tracking.">
+  <link rel="canonical" href="https://sojoodi.com/apps/XtoPDF/">
+  <meta name="theme-color" content="#faf7f1">
+  <meta property="og:title" content="X to PDF — Save articles. Read anywhere.">
+  <meta property="og:description" content="Turn an X Article into a clean PDF for offline reading. Free, private, and simple.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sojoodi.com/apps/XtoPDF/">
+  <link rel="icon" href="images/app-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav class="shell" aria-label="Main navigation">
+    <a class="brand" href="./"><img src="images/app-icon.svg" width="42" height="42" alt="">X to PDF</a>
+    <div class="nav-links"><a href="https://sojoodi.com/apps/">All apps</a><a href="release-notes.html">Release notes</a></div>
+  </nav>
+  <main id="main" class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Chrome extension</p>
+        <h1>Save articles.<br>Read anywhere.</h1>
+        <p class="lead">Save long-form X Articles as clean, two-column PDFs for offline reading.</p>
+        <div class="actions"><a class="button primary" href="downloads/x-to-pdf-v1.0.1.zip" download>Download ZIP ↓</a><a class="button" href="#demo">Watch the demo</a><a href="#install">How to install</a></div>
+        <p class="meta">Free · Version 1.0.1 · MIT license</p>
+      </div>
+      <div class="hero-art"><img src="images/app-icon.svg" width="1024" height="1024" alt="X to PDF: a serif X and PDF lettering framed in warm ivory and gold"></div>
+    </header>
+    <section id="demo" aria-labelledby="demo-title">
+      <h2 id="demo-title">See it in action.</h2>
+      <p class="muted">Keep headings, emphasis, links, lists, quotations, and code. Processing stays on your computer, with no uploads or tracking.</p>
+      <figure class="demo-video">
+        <video controls playsinline preload="metadata" width="1168" height="836" aria-label="X to PDF demonstration">
+          <source src="assets/x-to-pdf-demo.webm" type="video/webm">
+          <source src="assets/x-to-pdf-demo-browser.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="assets/x-to-pdf-demo-browser.mp4">Open the demo video</a>.
+        </video>
+      </figure>
+      <div class="sample-download">
+        <img class="sample-preview" src="images/sample-pdf-preview.png" alt="First-page preview of the sample PDF, showing the article’s two-column layout" loading="lazy">
+        <div class="sample-details"><h3>A sample article by Dan Koe</h3><p class="muted">Two columns, 9 pt Times New Roman, Letter paper.</p><a href="assets/sample-pdf-dan-koe.pdf" target="_blank" rel="noopener">Open sample PDF ↗<span class="sr-only"> (opens in a new tab)</span></a></div>
+      </div>
+    </section>
+    <section class="split" id="install" aria-labelledby="install-title">
+      <div><h2 id="install-title">Install in Chrome.</h2><p class="muted">Install manually while Chrome Web Store approval is pending.</p></div>
+      <div>
+        <ol>
+          <li>Extract the downloaded ZIP into a permanent folder. Keep it there after installation.</li>
+          <li>Enter <code>chrome://extensions</code> in Chrome’s address bar, then enable <strong>Developer mode</strong>.</li>
+          <li>Click <strong>Load unpacked</strong> and select the extracted <code>x-to-pdf</code> folder containing <code>manifest.json</code>.</li>
+          <li>Find <strong>X to PDF</strong> in Chrome’s extensions menu. Pin it for easy access.</li>
+        </ol>
+        <div class="note"><p><strong>Manual updates:</strong> replace the installed folder’s contents with the new release, then click <strong>Reload</strong> at <code>chrome://extensions</code>.</p></div>
+      </div>
+    </section>
+    <section aria-labelledby="use-title">
+      <h2 id="use-title">Save an article.</h2>
+      <div class="grid">
+        <div><h3>1. Open an article</h3><p>Open a long-form X Article you can access and let it finish loading. You can also paste its status URL into the extension and click Open.</p></div>
+        <div><h3>2. Create your preview</h3><p>Open X to PDF and click <strong>Create PDF</strong>. Review the extracted article in the print preview.</p></div>
+        <div><h3>3. Save your PDF</h3><p>Click <strong>Print / Save PDF</strong>, then select Save to PDF. Use Letter paper, 100% scale, and turn off browser headers and footers.</p></div>
+      </div>
+      <p class="meta">Designed for X’s long-form Articles. Ordinary posts and threads are not supported article formats.</p>
+    </section>
+  </main>
+  <footer><div class="shell"><span>© 2026 Sahand Sojoodi</span><a href="https://sojoodi.com/">sojoodi.com</a></div></footer>
+</body>
+</html>

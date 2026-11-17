@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "X to PDF",
+  "version": "1.0.1",
+  "description": "Turn an open X Article into a clean, two-column, 9 pt print-ready document.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*"
+  ],
+  "action": {
+    "default_title": "X to PDF",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

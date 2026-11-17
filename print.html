@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="print.css">
+    <title>Print X Article</title>
+  </head>
+  <body>
+    <aside class="toolbar">
+      <strong>Print-ready</strong>
+      <span>Choose “Save to PDF” in Chrome’s print dialog.</span>
+      <button id="print">Print / Save PDF</button>
+    </aside>
+    <article id="document" hidden>
+      <header>
+        <h1 id="title"></h1>
+        <p id="byline"></p>
+      </header>
+      <main id="content"></main>
+      <footer>Original: <a id="source"></a></footer>
+    </article>
+    <p id="error" hidden></p>
+    <script src="print.js"></script>
+  </body>
+</html>
+

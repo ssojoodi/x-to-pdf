@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280">
+<title>X to PDF — Save articles. Read anywhere.</title>
+<rect width="440" height="280" fill="#f7f2e8"/>
+<rect x="12" y="12" width="416" height="256" rx="4" fill="none" stroke="#c9b59a"/>
+<text x="30" y="63" font-family="'Liberation Sans', Arial, sans-serif" font-size="10" letter-spacing="2.1" fill="#7d6956">ARTICLES, TO KEEP.</text>
+<text x="28" y="119" font-family="'Liberation Serif', 'Times New Roman', serif" font-size="49" fill="#1f1a17">X to PDF</text>
+<path d="M30 141 H110" stroke="#b89b72" stroke-width="1.5"/>
+<text x="30" y="178" font-family="'Liberation Sans', Arial, sans-serif" font-size="17" fill="#514438">Save articles.</text>
+<text x="30" y="203" font-family="'Liberation Sans', Arial, sans-serif" font-size="17" fill="#514438">Read anywhere.</text>
+<text x="30" y="241" font-family="'Liberation Sans', Arial, sans-serif" font-size="10" letter-spacing=".6" fill="#7d6956">CLEAN PDFs · LOCAL PROCESSING</text><g transform="translate(287 47)">
+<rect x="7" y="9" width="119" height="177" rx="3" fill="#e3d7c7"/>
+<rect width="119" height="177" rx="3" fill="#fffdf8" stroke="#c9b59a" stroke-width="1.5"/>
+<text x="14.28" y="23.01" font-family="'Liberation Serif', 'Times New Roman', serif" font-size="8.449" fill="#1f1a17">An article worth</text>
+<text x="14.28" y="34.515" font-family="'Liberation Serif', 'Times New Roman', serif" font-size="8.449" fill="#1f1a17">keeping.</text>
+<path d="M 14.28 44.25 H 104.72" stroke="#b89b72" stroke-width="1"/>
+<path d="M 14.28 54.87 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 60.357 h 37.7706" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 65.844 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 71.33099999999999 h 34.075649999999996" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 76.818 h 39.4128" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 82.30499999999999 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 87.792 h 28.7385" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 93.279 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 98.76599999999999 h 39.82335" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 104.253 h 34.89675" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 109.74 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 115.227 h 36.9495" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 120.714 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 126.201 h 32.0229" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 131.688 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 137.17499999999998 h 39.00225" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 142.662 h 24.633" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 54.87 h 34.075649999999996" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 60.357 h 39.4128" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 65.844 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 71.33099999999999 h 28.7385" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 76.818 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 82.30499999999999 h 39.82335" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 87.792 h 34.89675" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 93.279 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 98.76599999999999 h 36.9495" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 104.253 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 109.74 h 32.0229" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 115.227 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 120.714 h 39.00225" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 126.201 h 24.633" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 131.688 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 137.17499999999998 h 37.7706" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 63.665 142.662 h 41.055" stroke="#9a8a79" stroke-width="1"/>
+<path d="M 14.28 159.3 H 104.72" stroke="#e3d7c7"/>
+</g></svg>

@@ -1,0 +1,15 @@
+dist/
+*.zip
+__pycache__/
+.DS_Store
+Thumbs.db
+
+# Local agent settings and credentials
+.agents/
+.codex/
+.aws/
+.env
+.env.*
+
+# Keep the standalone website download in source control
+!web-page/downloads/*.zip

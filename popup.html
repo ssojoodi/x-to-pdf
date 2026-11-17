@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="popup.css">
+    <title>X to PDF</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="mark">X→PDF</span>
+        <h1>X to PDF</h1>
+      </header>
+      <p class="description">Open an X Article, then create a clean 9 pt reading copy.</p>
+      <label for="url">X Article URL</label>
+      <div class="url-row">
+        <input id="url" type="url" spellcheck="false" placeholder="https://x.com/…/status/…">
+        <button id="open" class="secondary" type="button">Open</button>
+      </div>
+      <button id="create" class="primary" type="button">Create PDF</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
+
